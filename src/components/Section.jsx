@@ -55,7 +55,7 @@ const Section = () => {
    }
    return (
       <>
-         <section className=" py-6 px-10 w-full flex flex-col gap-8">
+         <section className=" py-6 px-10 min-h-screen w-full flex flex-col gap-8">
             <div className="w-full flex gap-2 justify-between flex-col md:flex-row lg:flex-row" >
                <span className="w-[100%] md:w-[80%] lg:w-[85%] xl:w-[90%] relative h-fit">
                   <CiSearch color="blue" className=" absolute left-2 top-2/4 translate-y-[-50%]" />
@@ -78,7 +78,7 @@ const Section = () => {
                {
                   userValues.length > 0
                      ? <p className=" text-gray-400">Sorry , There is no Employee ...</p>
-                     : <div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                     : <div className='grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                         {users.filter((user) => {
                            return searchValue.toLocaleLowerCase() === ''
                               ? user

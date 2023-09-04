@@ -6,7 +6,7 @@ import { BsFillPeopleFill } from 'react-icons/bs'
 
 const Aside = () => {
    return (
-      <aside className="sm:w-[20%] md:w-[15%] lg:w-[8%] bg-blue-500 flex items-center justify-center">
+      <aside className=" bg-blue-500 min-h-screen flex items-center justify-center">
          <ul className=' cursor-pointer w-full py-[50px] text-center text-white text-xs'>
             <li className='py-4'>
                <RiDashboardLine className='relative left-2/4 translate-x-[-50%]' size={30} />

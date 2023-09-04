@@ -8,8 +8,10 @@ const Home = () => {
    return (
       <>
          <main className="flex min-h-screen w-full">
-            <Aside />
-            <div className="bg-gray-100 w-[92%]">
+            <div className='fixed left-0 z-50'>
+               <Aside />
+            </div>
+            <div className="bg-gray-100 w-[93%] h-full ml-[95px]">
                <NavBar />
                <Section />
             </div>
