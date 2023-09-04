@@ -4,9 +4,10 @@ import Title from './Title'
 import Input from './Input'
 import Label from './Label'
 import Select from './Select';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const Form = ({ show, setShow, userValues, setUserValues, users, setUsers }) => {
+const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handleChangeImage }) => {
+   const [image, setImage] = useState(null)
    const handleChange = (e) => {
       const name = e.target.name
       const value = e.target.value
@@ -51,6 +52,8 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers }) => 
       ])
       setShow(false)
    }
+
+   
    return (
       <section className={show ? 'fixed p-4 bg-white w-[80%] left-2/4 translate-x-[-50%] top-2/4 translate-y-[-50%] z-50 overflow-scroll' : 'hidden'}>
          <form
@@ -64,6 +67,7 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers }) => 
                <div className='flex flex-col md:flex-row lg:flex-row mt-4 w-full gap-4'>
                   <div className='w-ful md:w-2/6 lg:w-2/6'>
                      <input
+                        onChange={handleChangeImage}
                         type='file'
                         name='file'
                      />

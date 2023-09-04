@@ -10,7 +10,7 @@ const Employee = ({ user , removeItem ,index }) => {
          <div className='flex flex-col py-1 px-6 gap-2'>
             <img
                className=" w-14 h-14 rounded-full object-cover"
-               src={image}
+               src={user.file ? user.file : image}
                alt="profile"
             />
             <div className='flex justify-between'>
