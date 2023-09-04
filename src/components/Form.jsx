@@ -53,7 +53,7 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handl
       setShow(false)
    }
 
-   
+
    return (
       <section className={show ? 'fixed p-4 bg-white w-[80%] left-2/4 translate-x-[-50%] top-2/4 translate-y-[-50%] z-50 overflow-scroll' : 'hidden'}>
          <form
@@ -179,6 +179,7 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handl
             </div>
             <div className='mt-5 flex gap-2 justify-end w-full'>
                <button
+                  type='button'
                   onClick={() => setShow(false)}
                   className=' py-1 px-4 text-white rounded-md bg-red-600'>
                   Cancel

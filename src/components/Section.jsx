@@ -19,7 +19,6 @@ const Section = () => {
    const [users, setUsers] = useState(getLocalStorage())
    const [searchValue, setSearchValue] = useState("")
    const [userValues, setUserValues] = useState({
-      id: '',
       file: '',
       name: '',
       date: '',

@@ -10,9 +10,12 @@ const Select = ({ handleChange, name, id, option1, option2, option3 }) => {
          id={id}
          required
       >
+         <option>Select</option>
          <option>{option1}</option>
          <option>{option2}</option>
-         <option>{option3}</option>
+         {
+            option3 && <option>{option3}</option>
+         }
       </select>
    )
 }
