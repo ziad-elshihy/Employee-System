@@ -189,7 +189,7 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handl
                <Title title={'Work From Home'} />
                <span className='flex items-center gap-2'>
                   <input name='remotely' type='checkbox' id='checkbox' value='Work Remotely' onChange={handleChange} />
-                  <label htmlFor='checkbox'>Allow Employee To Work From Home</label>
+                  <label className='text-sm' htmlFor='checkbox'>Allow Employee To Work From Home</label>
                </span>
             </div>
             <div className='mt-5 flex gap-2 justify-end w-full'>
