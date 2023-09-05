@@ -98,11 +98,11 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handl
                      </span>
                   </div>
                   <div className='w-full md:w-2/6 lg:w-2/6 flex flex-row md:flex-col lg:flex-col gap-2'>
-                     <span className='flex flex-col w-2/6 md:w-full lg:w-full '>
+                     <span className='flex flex-col w-2/4 md:w-full lg:w-full '>
                         <Label forInp={'date'} value={'Start Date'} />
                         <Input type={'date'} id={'date'} name={'date'} handleChange={handleChange} />
                      </span>
-                     <span className='flex flex-col w-4/6 md:w-full lg:w-full '>
+                     <span className='flex flex-col w-2/4 md:w-full lg:w-full '>
                         <Label forInp={'email'} value={'Email'} />
                         <Input type={'email'} id={'email'} name={'email'} handleChange={handleChange} />
                      </span>
