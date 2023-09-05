@@ -4,9 +4,10 @@ import Title from './Title'
 import Input from './Input'
 import Label from './Label'
 import Select from './Select';
-import { useEffect, useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
+import drag from '../assets/drag-and-drop-add-document-file-button-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg'
 const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handleChangeImage }) => {
+   const fileRef = useRef(null)
    const [image, setImage] = useState(null)
    const handleChange = (e) => {
       const name = e.target.name
@@ -52,8 +53,6 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handl
       ])
       setShow(false)
    }
-
-
    return (
       <section className={show ? 'fixed p-4 bg-white w-[80%] left-2/4 translate-x-[-50%] top-2/4 translate-y-[-50%] z-50 overflow-scroll' : 'hidden'}>
          <form
@@ -65,14 +64,30 @@ const Form = ({ show, setShow, userValues, setUserValues, users, setUsers, handl
             <div>
                <Title title={'Personal Info'} />
                <div className='flex flex-col md:flex-row lg:flex-row mt-4 w-full gap-4'>
-                  <div className='w-ful md:w-2/6 lg:w-2/6'>
+                  <div
+                     onClick={() => fileRef.current.click()}
+                     className='w-full md:w-2/6 cursor-pointer lg:w-2/6 px-8 flex items-center justify-between border'
+                  >
+                     <img
+                        className='w-[100px] mx-auto  md:mx-0 lg:mx-0 '
+                        src={drag}
+                        alt='Drag & Drop'
+                     />
+                     <button
+                        className='bg-blue-400 hidden md:block lg:block text-white p-1 rounded-md'
+                     >
+                        Choose Image
+                     </button>
                      <input
+                        className='hidden'
                         onChange={handleChangeImage}
+                        accept='image/*'
                         type='file'
                         name='file'
+                        ref={fileRef}
                      />
                   </div>
-                  <div className='w-ful md:w-2/6 lg:w-2/6 flex flex-row md:flex-col lg:flex-col gap-2'>
+                  <div className='w-full md:w-2/6 lg:w-2/6 flex flex-row md:flex-col lg:flex-col gap-2'>
                      <span className='flex flex-col w-2/4 md:w-full lg:w-full'>
                         <Label forInp={'text'} value={'Name'} />
                         <Input type={'text'} id={'text'} name={'name'} handleChange={handleChange} />
