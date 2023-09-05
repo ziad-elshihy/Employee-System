@@ -9,7 +9,7 @@ const Input = ({ type, id, value, name, handleChange }) => {
          id={id}
          type={type}
          className=' outline-slate-400 border-[1px] rounded-sm border-gray-300'
-         // required
+         required
       />
 
    )
